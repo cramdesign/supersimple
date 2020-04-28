@@ -1,0 +1,203 @@
+/* 
+Name: drop menu 
+Version: 1.4.0
+*/
+
+.menu, .menu ul, nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 99;
+	background-color: rgba( 0,0,0,0.1 );
+}
+
+/* display menu items as flex items. go, go flexbox */
+
+.menu {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.menu a {
+	text-decoration: none;
+	line-height: 1;
+	color: #555;
+	display: block;
+	padding: 0.75em 1em;
+	white-space: nowrap;
+	transition: background-color 300ms;
+	position: relative;
+}
+
+.menu > li {
+	vertical-align: top;
+}
+
+.menu li {
+	position: relative;
+	text-align: left;
+}
+
+.menu ul {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 300ms;	
+	position: absolute;
+	left: 0;
+	top: 100%;
+}
+
+.menu ul ul {
+	left: 100%;
+	top: -0.75em;
+}
+
+.menu li:hover > ul {
+	opacity: 1;
+	visibility: visible; 
+}
+
+@media (min-width:800px) {
+
+	.menu {
+		background: transparent;
+	}
+	
+	.menu ul {
+		padding: 0.75em 0;
+	}
+
+	.menu li.parent > a:after,
+	.menu li.menu-item-has-children > a:after {
+		content: "";
+		padding-right: 1em;
+	}
+
+	.menu li.parent > a:before,
+	.menu li.menu-item-has-children > a:before {
+		display: block;
+		content: "\025B8";
+		position: absolute;
+		right: 1em;
+	}
+
+	.menu > li.parent:hover > a:before,
+	.menu > li.menu-item-has-children:hover > a:before {
+		content: "\025BE";
+	}
+
+	.menu li li.parent:hover > a:before,
+	.menu li li.menu-item-has-children:hover > a:before {
+		right: 0.5em;
+	}
+
+	.menu li:hover > a {
+		background: rgba(0,0,0,0.1);
+	}
+	
+}
+
+@media (max-width:800px) {
+
+	.menu li {
+		display: block;
+	}
+	
+	.menu a:hover {
+		background: rgba(0,0,0,0.1);
+	}
+	
+	.menu > li {
+		padding: 0.75em 0;
+		border-top: 1px solid rgba(0,0,0,0.1);
+	}
+	
+	.menu > li > a {
+		font-weight: bold;
+	}
+	
+	.menu ul {
+		background: none;
+		position: static;
+		visibility: visible;
+		opacity: 1;
+	}
+		
+	.menu ul ul {
+		margin-left: 1em;
+	}
+	
+	.menu li li a {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+	}
+	
+	.menu li li a:before {
+		content: '\2022\00a0';
+	}
+
+}
+
+/* toggle */
+	
+input.toggle, label.toggle {
+	display: none;
+	padding: 0.75em 0;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 1;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+label.toggle:before {
+	content: "\2630\00A0";
+	font-weight: normal;
+	text-rendering: geometricPrecision;
+}
+
+@media (max-width: 800px) {
+
+	label.toggle {
+		display: block;
+	}
+	
+	input.toggle:checked ~ label.toggle {
+		background-color: rgba(0,0,0,0.4);
+		color: #fff;
+	}
+	
+	input.toggle:checked ~ label.toggle:before {
+		content: "\2716\00a0";
+	}
+	
+	.target {
+		display: none;
+	}
+	
+	input.toggle:checked ~ .target {
+		display: block;
+	}
+	
+}
+
+
+.simple.menu {
+	display: block;
+}
+
+.simple.menu li {
+	display: block;
+}
+
+.simple.menu a {
+	padding: 0.375em;
+	margin-left: -0.375em;
+	display: inline-block;
+}
