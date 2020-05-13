@@ -1,26 +1,23 @@
-<article <?php post_class(); ?>>
+<article <?php post_class("the_content"); ?>>
 	
-	<?php if( ! is_singular() ) get_template_part( 'inc/part-thumbnail' ); ?>
+<?php if( is_singular() ) get_template_part( 'inc/part-thumbnail' ); ?>
+<?php if ( ! is_front_page() ) : /* no header on the front page */ ?>
 
 	<header>
 		
 		<?php 
-			if ( is_singular() ) : 
+			if ( is_singular() ) {
 			
 				// if this post is a single post, page, or attachment; just print the title
 				// but not if it's the front page as set in Settings > Reading
-				if ( !is_front_page() ) : 
-				
-					the_title( '<h1 class="title">', '</h1>' ); 
-					
-				endif;
-				
-			else : 
+				the_title( '<h1 class="title">', '</h1>' );
+									
+			} else {
 			
 				// otherwise print the title with a link to the single
 				the_title( '<h2 class="title"><a href="' . get_the_permalink() . '" data-id="' . get_the_ID() . '">', '</a></h2>' );
 
-			endif;
+			}
 		?>
 		
 		<?php 
@@ -46,10 +43,8 @@
 		
 	</header>
 	
-	<div class="the_content">
+<?php endif; ?>
+
+<?php is_singular() ? the_content() : the_excerpt(); ?>
 		
-		<?php is_singular() ? the_content() : the_excerpt(); ?>
-		
-	</div>
-	
 </article><!-- post -->

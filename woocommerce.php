@@ -1,8 +1,4 @@
-<?php 
-	// print the file header.php which contains the opening <html> 
-	// and the top part of the site that is included on every page
-	get_header(); 
-?>
+<?php get_header(); ?>
 
 
 			
@@ -20,30 +16,27 @@
 ?>
 
 
-<div class="row content-sidebar">
+<div id="content">
 
-	<section class="woo">
+	<section class="woo site-content">
 		
 		<?php woocommerce_content(); ?>
 				
 	</section>
 	
-	<aside>
+	<aside class="site-sidebar">
 		
-		<?php 
-			// load sidebar.php
-			get_sidebar(); 
-		?>
+		<?php get_template_part( 'inc/sidebar' ); ?>
 		
 	</aside>
 
-</div><!-- row -->	
+</div><!-- #content -->	
 
 
 <?php 
 	
 	// load the comments.php file if it is needed
-	if ( comments_open() or get_comments_number() ) comments_template(); 
+	if ( comments_open() or get_comments_number() ) comments_template( '/inc/comments.php' ); 
 
 	
 	// print the file footer.php which contains the closing </html> 

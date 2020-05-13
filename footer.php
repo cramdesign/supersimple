@@ -1,5 +1,14 @@
 </main>
 
+
+<?php 
+
+	// load the comments.php file if it is needed
+	if ( comments_open() or get_comments_number() ) comments_template( '/inc/comments.php' );
+
+?>
+
+
 <footer id="footer">
 <div class="row">
 		
@@ -12,6 +21,8 @@
 </div><!-- row -->	
 </footer>
 	
+</body>
+
 <?php 
 	/*
 	Like wp_head(), wp_footer() allows Wordpress to do some necessary work in the footer of the theme.
@@ -21,5 +32,4 @@
 	wp_footer(); 
 ?>
 
-</body>
 </html>

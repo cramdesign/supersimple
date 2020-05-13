@@ -39,6 +39,10 @@ if ( !function_exists( 'supersimple_theme_scripts' ) ) : function supersimple_th
 	if ( is_child_theme() ) wp_enqueue_style ( 'style', get_stylesheet_directory_uri() . '/style.css' );
 
 
+	// load some javascript into the footer but only for admins
+	if( is_user_logged_in() ) wp_enqueue_script( 'admin', get_template_directory_uri() . '/inc/admin.js', array(), false, true );
+
+
 } endif;
 add_action( 'wp_enqueue_scripts', 'supersimple_theme_scripts', 5 );
 
@@ -71,6 +75,22 @@ function supersimple_theme_features() {
 	
 	// allow WooCommerce
 	add_theme_support( 'woocommerce' );
+
+
+	// Disable custom font sizes
+	add_theme_support( 'disable-custom-font-sizes' );
+
+
+	// new alignments
+	add_theme_support( 'align-wide' );
+
+
+	// Add support for editor styles
+	add_theme_support( 'editor-styles' );
+
+
+	// Enqueue editor styles
+	add_editor_style( 'css/type.css' );
 
 
 }
