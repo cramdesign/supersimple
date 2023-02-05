@@ -1,6 +1,8 @@
-/* 
+/*
+
 Name: drop menu 
-Version: 1.4.0
+Version: 1.4.1
+
 */
 
 .menu, .menu ul, nav ul {
@@ -177,11 +179,11 @@ label.toggle:before {
 		content: "\2716\00a0";
 	}
 	
-	.target {
+	.toggle + .menu {
 		display: none;
 	}
 	
-	input.toggle:checked ~ .target {
+	input.toggle:checked ~ .toggle + .menu {
 		display: block;
 	}
 	

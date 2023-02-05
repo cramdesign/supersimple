@@ -1,0 +1,176 @@
+/*
+	
+	Blox CSS
+	Version: 1.0.1
+	
+	Contains styles for Gutenberg Blocks
+	
+*/
+
+
+
+
+.wp-block:not([data-align=wide]):not([data-align=full]) {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	max-width: 840px;
+}
+
+.wp-block {
+	line-height: 1.5;
+}
+
+
+
+/* wp-blocks within the_content specifics */
+
+.the_content > [class*="wp-block"] {
+	margin: 2rem auto;
+}
+
+.the_content > :first-child {
+	margin-top: 4rem;
+}
+
+.the_content > :last-child {
+	margin-bottom: 5rem;
+}
+
+.the_content > [class*="alignfull"]:first-child {
+	margin-top: 0;
+}
+
+.the_content > [class*="alignfull"]:last-child {
+	margin-bottom: 0;
+}
+
+
+
+/* lastest posts */
+
+[class*="latest-posts"] {
+	padding: 0;
+}
+
+[class*="latest-posts"] * {
+/* 	outline: 1px solid rgba(255,0,0,0.3); */
+}
+
+[class*="latest-posts"] > li,
+[class*="latest-posts"].is-grid > li {
+	margin: 0;
+	overflow: hidden;
+	clear: both;
+	width: auto;
+}
+
+[class*="latest-posts__list"] > li + li {
+	margin-top: 4rem;
+}
+
+[class*="latest-posts"] a {
+	font-weight: bold;
+}
+
+[class*="latest-posts"] [class*="excerpt"] {
+	font-size: smaller;
+}
+
+@media ( min-width:800px ) {
+
+	[class*="latest-posts"].is-grid > li {
+		flex-basis: 0;
+		flex-grow: 1;
+	}
+
+	[class*="latest-posts"].is-grid > li:not(:first-child) {
+		margin-left: 9%;
+	}
+
+}
+
+
+
+
+/* buttons */
+
+a[class*="wp-block-button"] {
+	box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+	font-size: 0.8em;
+	font-weight: bold;
+	border-radius: 0;
+}
+
+a[class*="wp-block-button"]:hover {
+	box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+a[class*="wp-block-button"]:active {
+	box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+	position: relative;
+	top: 1px;
+}
+
+
+
+/* media block */
+
+[class].wp-block-media-text .wp-block-media-text__content {
+	padding: 9%;
+}
+
+
+
+/* wp-block-column */
+
+.wp-block-column {
+	margin-bottom: 4rem;
+}
+
+@media (min-width: 800px) {
+
+	[class].wp-block-column:not(:first-child) {
+		margin-left: 9%;
+	}
+
+}
+
+
+
+/* block table */
+
+[class].wp-block-table.is-style-stripes {
+	border-spacing: 0;
+	border-collapse: inherit;
+	background-color: rgba(0,0,0,0.015);
+	border-bottom: 1px solid rgba(0,0,0,0.0);
+}
+
+[class].wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: rgba(0,0,0,0.03);
+}
+
+
+
+
+/* group block */
+
+.wp-block-group {
+	padding: 6%;
+}
+
+.wp-block-group > * {
+	max-width: 840px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+/* block gallery */
+
+[class].wp-block-gallery .blocks-gallery-item figcaption {
+	padding: 0.25em 1em 0.375em;
+	background: rgba(0,0,0,0.4);
+}
+

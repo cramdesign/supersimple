@@ -1,25 +1,25 @@
 
-.wp-block:not([data-align=wide]):not([data-align=full]) {
-	margin-bottom: 30px;
-	margin-top: 30px;
-	max-width: 840px;
-	line-height: 1.5;
-}
-
 .editor-post-title__block .editor-post-title__input,
 h1.title {
-	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-family: -apple-system, system-ui, "Segoe UI", "Roboto", Helvetica, sans-serif;
 	font-size: 4em;
 	padding-bottom: 0.5em;
 	letter-spacing: -1px;
 }
 
+html { font-size: 14px; }
+
+@media (min-width: 800px)  { html { font-size: 15px; }}
+@media (min-width: 1000px) { html { font-size: 15px; }}
+@media (min-width: 1200px) { html { font-size: 16px; }}
+@media (min-width: 1500px) { html { font-size: 17px; }}
+
 
 body {
-	color: #333;
-	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	font-size: 16px;
+	font-family: -apple-system, system-ui, "Segoe UI", "Roboto", Helvetica, sans-serif;
+	font-weight: normal;
 	line-height: 1.1;
+	color: #333;
 	background: #fafafa;
 }
 
@@ -44,12 +44,12 @@ h4:first-child, h5:first-child, h6:first-child {
 }
 
 p {
-	margin-top: 1em;
-	margin-bottom: 1em;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 a {
-	color: #c0392b;
+	color: #c32;
 }
 
 blockquote {
@@ -59,50 +59,8 @@ blockquote {
 	font-size: 1.25em;
 }
 
-#content, #tinymce {
+#main {
 	line-height: 1.75;
 }
-
-
-/* figure alignment */
-
-.wp-block-image figure.alignleft,
-.wp-block-image figure.alignright {
-/* 	width: 100%; */
-	margin: 0.5em 0 1em 0;
-	display: table;
-}
-
-.wp-block-image figure.alignleft figcaption,
-.wp-block-image figure.alignright figcaption {
-	display: table-caption;
-	caption-side: bottom;
-}
-
-@media screen and (min-width: 600px) {
-	
-	.wp-block-image figure.alignleft {
-		float: left;
-		margin-right: 2em;
-		max-width: 50%;
-	}
-	
-	.wp-block-image figure.alignright {
-		float: right;
-		margin-left: 2em;
-		max-width: 50%;
-	}
-
-}
-
-[class*="wp-block"] figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 0;
-	text-align: left;
-}
-
-
-
-
 
 

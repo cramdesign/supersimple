@@ -1,7 +1,7 @@
 <article <?php post_class("the_content"); ?>>
 	
 <?php if( is_singular() ) get_template_part( 'inc/part-thumbnail' ); ?>
-<?php if ( ! is_front_page() ) : /* no header on the front page */ ?>
+<?php if ( ! is_front_page() or is_home() ) : /* no header on a static front page */ ?>
 
 	<header>
 		

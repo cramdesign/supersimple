@@ -15,7 +15,7 @@
 	<h6 id="description"><?php bloginfo( "description" ); ?></h6>
 	
 	<nav id="social">
-		<?php wp_nav_menu( array( 'theme_location' => 'social', 'container' => false, 'menu_class' => '' )); ?>
+		<?php wp_nav_menu( array( 'theme_location' => 'social', 'menu_class' => '' )); ?>
 	</nav>
 		
 </div><!-- row -->	

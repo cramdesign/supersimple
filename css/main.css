@@ -109,8 +109,6 @@ p:last-child, .title:last-child {
 	margin: 3em auto;
 }
 
-
-
 .alignfull {
 	display: block;
 }
@@ -232,3 +230,45 @@ p:last-child, .title:last-child {
 #footer {
 	padding: 3em 0;
 }
+
+#footer * {
+/* 	outline: 1px solid rgba(255,0,0,0.3); */
+}
+
+#footer nav {
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+
+@media (min-width:800px) {
+
+	#footer .row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	#footer .row > * {
+		margin: 0;
+	}
+	
+	
+	#footer > ul {
+		background: transparent;
+	}
+	
+}
+
+@media (max-width:800px) {
+	
+	#footer {
+		text-align: center;
+		padding: 6% 0;
+	}
+	
+	#description {
+		margin-bottom: 1em;
+	}
+	
+}
+
